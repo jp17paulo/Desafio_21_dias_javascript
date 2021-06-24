@@ -1,32 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 
 <head>
-  <title>Declarando variáveis</title>
+  <title>Exercícios 21 dias</title>
+  <meta charset="utf-8">
 </head>
 
 <body>
+  <font color="red">Aqui vai o código HTML que fará seu site aparecer.</font>
   <script>
-    /* Primeiro exercício
+    debugger
+    horario = prompt("Digite o horário que você acordou:")
 
-    let a = parseInt(prompt("Digite o valor bruto anual"));
-    let b = parseInt(prompt("Digite o valor das dividas anual"));
-    let c = (a - b) / 12;
+    retorno = new Date("11/02/2021 " + horario) >= new Date("11/02/2021 05:00") && new Date("11/02/2021 " + horario) <= new Date("11/02/2021 05:59")
 
-    //alert("O resultado mensal é: " + c)
-    document.write("o valor  é " + c);
-    */
-
-    var QtdLaranja = parseInt(prompt("Digite a quantidade de laranjas"));
-    var ValorLaranja = 0.30;
-    var total = QtdLaranja * ValorLaranja;
-
-    //alert("O resultado mensal é: " + c)
-    document.write("o valor  é " + total);
-
-
+    if (retorno) {
+      alert("Parabéns !!! Você está acordado")
+    }
+    else {
+      alert("Infelizmente você perdeu esta aula")
+    }
   </script>
-
 </body>
 
 </html>
