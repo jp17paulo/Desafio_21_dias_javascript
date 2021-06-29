@@ -8,40 +8,45 @@
 
 <body>
   <script>
+    // const expr = 'Papayas';
+    // switch (expr) {
+    //   case 'Oranges':
+    //     console.log('Mangoes and papayas are $2.79 a pound.');
+    //     break;
+    //   default:
+    //     console.log('Sorry, we are out of ' + expr + '.');
+    // }
+    a = 3
     debugger
 
-    despAgua = 40;
-    despLuz = 50;
-    despInt = 80;
-    despCur = 97;
-    despMer = 800;
-    despAlug = 1200;
-
-    despesas =
-      despAgua +
-      despLuz +
-      despInt +
-      despCur +
-      despMer +
-      despAlug;
-
-    salarioDia15 = parseFloat(prompt("Digite o valor do seu salário do dia 15:"));
-    salarioDia30 = parseFloat(prompt("Digite o valor do seu salário do dia 30:"));
-
-
-    salarioTotal = (salarioDia15 + salarioDia30);
-
-    calculo = (salarioTotal - despesas);
-
-    if (calculo < 0) {
-      alert("Infelizmente não sobrou dinheiro, é preciso investir em sua educação");
+    if (a == 1) {
+      alert(1)
+    }
+    else if (a == 2) {
+      alert(2)
+    }
+    else if (a == 3) {
+      alert(3)
     }
     else {
-      investimento = parseFloat(calculo * 30) / 100;
-      diversao = calculo - investimento;
-      // alert("Parabéns, Vamos Investir, sobrou dinheiro e você pode investir R$ " + investimento);
-      document.write("Parabéns, Vamos Investir R$ " + investimento + " e sobrou R$ " + diversao + " para a sua diversão");
+      alert("Nenhuma das opções")
     }
+
+    switch (a) {
+      case 1:
+        alert(1)
+        break
+      case 2:
+        alert(2)
+        break
+      case 3:
+        alert(3)
+        break
+      default:
+        alert("Nenhuma das opções")
+        break
+    }
+
 
   </script>
 </body>
