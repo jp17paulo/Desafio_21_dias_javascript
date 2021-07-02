@@ -8,45 +8,56 @@
 
 <body>
   <script>
-    // const expr = 'Papayas';
-    // switch (expr) {
-    //   case 'Oranges':
-    //     console.log('Mangoes and papayas are $2.79 a pound.');
-    //     break;
-    //   default:
-    //     console.log('Sorry, we are out of ' + expr + '.');
-    // }
-    a = 3
     debugger
 
-    if (a == 1) {
-      alert(1)
+    cliente1 = prompt("Digite o nome do primeiro cliente: ");
+    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
+    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+    s_mostra = (s_sexo == "M" ? " do " : " da ");
+    valorcli1 = prompt("Digite o valor " + s_mostra + cliente1);
+
+    cliente2 = prompt("Digite o nome do primeiro cliente: ");
+    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
+    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+    s_mostra = (s_sexo == "M" ? " do " : " da ");
+    valorcli2 = prompt("Digite o valor " + s_mostra + cliente2);
+
+    cliente3 = prompt("Digite o nome do primeiro cliente: ");
+    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
+    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+    s_mostra = (s_sexo == "M" ? " do " : " da ");
+    valorcli3 = prompt("Digite o valor " + s_mostra + " " + cliente3);
+
+    media = (valorcli1 + valorcli2 + valorcli3) / 3;
+    debugger
+
+    if (media > 100) {
+      alert("Parabéns, a média de vocês é maior que 100 ")
     }
-    else if (a == 2) {
-      alert(2)
+    else if (media > 50 && media <= 100) {
+      alert("Muito bem, você está na média, vamos melhorar !!!")
     }
-    else if (a == 3) {
-      alert(3)
+    else if (media >= 20 && media < 50) {
+      alert("Você precisa realmente melhorar")
     }
     else {
-      alert("Nenhuma das opções")
+      alert("Pessoal, é isso que vocês realmente querem?")
     }
 
-    switch (a) {
-      case 1:
-        alert(1)
-        break
-      case 2:
-        alert(2)
-        break
-      case 3:
-        alert(3)
-        break
-      default:
-        alert("Nenhuma das opções")
-        break
-    }
-
+    // switch (media) {
+    //   case (media > 100):
+    //     alert("Parabéns, a média de vocês é maior que 100 ")
+    //     break
+    //   case media > 50 && media <= 100:
+    //     alert("Muito bem, você está na média, vamos melhorar !!!")
+    //     break
+    //   case media >= 20 && media < 50:
+    //     alert("Você precisa realmente melhorar")
+    //     break
+    //   default:
+    //     alert("Pessoal, é isso que vocês realmente querem?")
+    //     break
+    // }
 
   </script>
 </body>
