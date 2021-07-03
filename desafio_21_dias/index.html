@@ -10,54 +10,28 @@
   <script>
     debugger
 
-    cliente1 = prompt("Digite o nome do primeiro cliente: ");
-    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
-    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
-    s_mostra = (s_sexo == "M" ? " do " : " da ");
-    valorcli1 = prompt("Digite o valor " + s_mostra + cliente1);
-
-    cliente2 = prompt("Digite o nome do primeiro cliente: ");
-    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
-    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
-    s_mostra = (s_sexo == "M" ? " do " : " da ");
-    valorcli2 = prompt("Digite o valor " + s_mostra + cliente2);
-
-    cliente3 = prompt("Digite o nome do primeiro cliente: ");
-    sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
-    s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
-    s_mostra = (s_sexo == "M" ? " do " : " da ");
-    valorcli3 = prompt("Digite o valor " + s_mostra + " " + cliente3);
-
-    media = (valorcli1 + valorcli2 + valorcli3) / 3;
+    nomeCompetidor = prompt("Digite o nome do competidor: ");
+    posicao = parseInt(prompt("Digite a posição de chegada: \n1 para primeiro lugar\n2 para segundo lugar \n3 para terceiro lugar"));
+    r_posicao = posicao;
+    fraseCompetidor = [];
     debugger
-
-    if (media > 100) {
-      alert("Parabéns, a média de vocês é maior que 100 ")
+    switch (posicao) {
+      case 1:
+        fraseCompetidor = ["Parabéns, você venceu a prova!!!", " Medalha de ouro!!!"]
+        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
+        break
+      case 2:
+        fraseCompetidor = ["Parabéns, você conquistou o segundo lugar!!!", " Medalha de prata!!!"]
+        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
+        break
+      case 3:
+        fraseCompetidor = ["Parabéns, você conquistou o terceiro lugar!!!", " Medalha de bronze!!!"]
+        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
+        break
+      default:
+        alert("Continue treinando ")
+        break
     }
-    else if (media > 50 && media <= 100) {
-      alert("Muito bem, você está na média, vamos melhorar !!!")
-    }
-    else if (media >= 20 && media < 50) {
-      alert("Você precisa realmente melhorar")
-    }
-    else {
-      alert("Pessoal, é isso que vocês realmente querem?")
-    }
-
-    // switch (media) {
-    //   case (media > 100):
-    //     alert("Parabéns, a média de vocês é maior que 100 ")
-    //     break
-    //   case media > 50 && media <= 100:
-    //     alert("Muito bem, você está na média, vamos melhorar !!!")
-    //     break
-    //   case media >= 20 && media < 50:
-    //     alert("Você precisa realmente melhorar")
-    //     break
-    //   default:
-    //     alert("Pessoal, é isso que vocês realmente querem?")
-    //     break
-    // }
 
   </script>
 </body>
