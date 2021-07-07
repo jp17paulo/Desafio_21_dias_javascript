@@ -8,29 +8,19 @@
 
 <body>
   <script>
-    debugger
+    // valor = parseInt(prompt("Digite um valor para a tabuada"))
 
-    nomeCompetidor = prompt("Digite o nome do competidor: ");
-    posicao = parseInt(prompt("Digite a posição de chegada: \n1 para primeiro lugar\n2 para segundo lugar \n3 para terceiro lugar"));
-    r_posicao = posicao;
-    fraseCompetidor = [];
-    debugger
-    switch (posicao) {
-      case 1:
-        fraseCompetidor = ["Parabéns, você venceu a prova!!!", " Medalha de ouro!!!"]
-        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
-        break
-      case 2:
-        fraseCompetidor = ["Parabéns, você conquistou o segundo lugar!!!", " Medalha de prata!!!"]
-        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
-        break
-      case 3:
-        fraseCompetidor = ["Parabéns, você conquistou o terceiro lugar!!!", " Medalha de bronze!!!"]
-        alert(nomeCompetidor + " " + fraseCompetidor.join(' '))
-        break
-      default:
-        alert("Continue treinando ")
-        break
+    // for (a = 1; a < 11; a++) {
+    //   console.log(valo + " * " + a + " = " + (valor * a))
+    // }
+
+    valorMultiplicador = parseInt(prompt("Digite um valor do multiplicador"))
+
+    valorMultiplicando = parseInt(prompt("Digite o valor final para o multiplicando"))
+
+    for (a = 1; a <= valorMultiplicando; a++) {
+      console.log(valorMultiplicador + " * " + a + " = " + (valorMultiplicando * a))
+
     }
 
   </script>
