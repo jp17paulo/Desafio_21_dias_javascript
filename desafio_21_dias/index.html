@@ -8,19 +8,42 @@
 
 <body>
   <script>
-    // valor = parseInt(prompt("Digite um valor para a tabuada"))
+    debugger
 
-    // for (a = 1; a < 11; a++) {
-    //   console.log(valo + " * " + a + " = " + (valor * a))
-    // }
+    valor_clientes = []
+    media = 0;
+    for (i = 0; i < 3; i++) {
+      cliente = prompt("Digite o nome do primeiro cliente: ");
+      sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
+      s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+      s_mostra = (s_sexo == "M" ? " do " : " da ");
+      valor = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
 
-    valorMultiplicador = parseInt(prompt("Digite um valor do multiplicador"))
+      valor_clientes.push(valor)
+    }
 
-    valorMultiplicando = parseInt(prompt("Digite o valor final para o multiplicando"))
+    debugger
+    for (i = 0; i < 3; i++) {
+      media += valor_clientes[i]
+      if (i == 2) {
+        media / 3
+      }
 
-    for (a = 1; a <= valorMultiplicando; a++) {
-      console.log(valorMultiplicador + " * " + a + " = " + (valorMultiplicando * a))
+    }
 
+    // media = (valor_clientes[0] + valor_clientes[1] + valor_clientes[2]) / 3
+
+    if (media > 100) {
+      alert("Parabéns, a média de vocês é maior que 100 ")
+    }
+    else if (media > 50 && media <= 100) {
+      alert("Muito bem, você está na média, vamos melhorar !!!")
+    }
+    else if (media >= 20 && media < 50) {
+      alert("Você precisa realmente melhorar")
+    }
+    else {
+      alert("Nenhuma das opções")
     }
 
   </script>
