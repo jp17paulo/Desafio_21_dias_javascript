@@ -12,9 +12,10 @@
 
     valor_clientes = []
     media = 0;
-    for (i = 0; i < 3; i++) {
-      cliente = prompt("Digite o nome do primeiro cliente: ");
-      sexo = prompt("Digite o sexo do primeiro cliente: \nM para masculino\nF para feminino");
+    qtd_clientes = parseInt(prompt("Quantos clientes deseja cadastrar? "))
+    for (i = 1; i <= qtd_clientes; i++) {
+      cliente = prompt("Digite o nome do cliente: " + i);
+      sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
       s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
       s_mostra = (s_sexo == "M" ? " do " : " da ");
       valor = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
@@ -23,10 +24,10 @@
     }
 
     debugger
-    for (i = 0; i < 3; i++) {
+    for (i = 0; i < qtd_clientes; i++) {
       media += valor_clientes[i]
-      if (i == 2) {
-        media / 3
+      if (i == qtd_clientes) {
+        media = media / qtd_clientes
       }
 
     }
