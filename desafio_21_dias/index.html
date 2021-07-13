@@ -8,12 +8,20 @@
 
 <body>
   <script>
-    debugger
+
+
+    /*Declaração de variáveis*/
 
     valor_clientes = []
+    nomes_clientes = []
+    qtd_clientes = parseInt(prompt("Quantos clientes deseja cadastrar? "))
     media = 0;
     soma = 0;
-    qtd_clientes = parseInt(prompt("Quantos clientes deseja cadastrar? "))
+
+    /*****************************************************/
+    /*Looping para captar os valores e nomes dos clientes*/
+    /*****************************************************/
+
     for (i = 1; i <= qtd_clientes; i++) {
       cliente = prompt("Digite o nome do cliente: " + i);
       sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
@@ -21,11 +29,17 @@
       s_mostra = (s_sexo == "M" ? " do " : " da ");
       valor = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
 
-      valor_clientes.push(valor)
+      valor_clientes.push(valor);
+      nomes_clientes.push(cliente)
     }
 
+
+    /*****************************************************/
+    /*Looping para captar a média dos valores informados*/
+    /*****************************************************/
+
     debugger
-    for (j = 0; j < valor_clientes.length; j++) {
+    for (j = 1; j <= valor_clientes.length; j++) {
       soma += valor_clientes[j]
       if (j == valor_clientes.length - 1) {
         media = (soma / qtd_clientes)
@@ -37,20 +51,25 @@
 
     // msg_qtd_part = "A quantidade de participantes foi: "
 
+
+    /*****************************************************/
+    /*Apresentação na tela dos resultados*/
+    /*****************************************************/
+
     document.write("A quantidade de participantes foi: " + qtd_clientes + "<br><br>");
 
     if (media > 100) {
       document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
-      document.write("Parabéns, a média de vocês é maior que 100");
+      document.write("Parabéns, a média de vocês é maior que 100 <br><br>");
     }
     else if (media > 50 && media <= 100) {
       document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
-      document.write("Muito bem, você está na média, vamos melhorar !!!" + media.toFixed(2));
+      document.write("Muito bem, você está na média, vamos melhorar !!!" + media.toFixed(2) + "<br><br>");
     }
     else if (media >= 20 && media < 50) {
       document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
       document.write("Você está ficando abaixo, mas podemos melhorar, se esforce um pouco mais " + "<br>");
-      document.write("A nossa recompensa está no esforço, não no resultado. <br> Um esforço total é uma vitória completa ");
+      document.write("A nossa recompensa está no esforço, não no resultado. <br> Um esforço total é uma vitória completa <br><br>");
     }
     else {
       // document.write("A Quantidade de pessoas que passaram pela pesquisa é = " + qtd_clientes + "<br><br>");
@@ -63,8 +82,10 @@
         "você possa realizar aquilo que você quer. Lembre-se, nunca perdemos, ou você ganha" +
         ", ou você aprende, lembre disso. " + "<br><br>");
       document.write(" Reflita, <br> Treine enquanto eles dormem, estude enquanto eles se divertem" +
-        ", persista enquanto eles descansam, e então, viva o que eles sonham. ");
+        ", persista enquanto eles descansam, e então, viva o que eles sonham. <br><br>");
     }
+
+    document.write("Os participantes da pesquisa foram: <br><br>" + nomes_clientes.join(" , ") + "<br><br>");
 
   </script>
 </body>
