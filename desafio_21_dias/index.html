@@ -12,6 +12,7 @@
 
     valor_clientes = []
     media = 0;
+    soma = 0;
     qtd_clientes = parseInt(prompt("Quantos clientes deseja cadastrar? "))
     for (i = 1; i <= qtd_clientes; i++) {
       cliente = prompt("Digite o nome do cliente: " + i);
@@ -24,27 +25,45 @@
     }
 
     debugger
-    for (i = 0; i < qtd_clientes; i++) {
-      media += valor_clientes[i]
-      if (i == qtd_clientes) {
-        media = media / qtd_clientes
+    for (j = 0; j < valor_clientes.length; j++) {
+      soma += valor_clientes[j]
+      if (j == valor_clientes.length - 1) {
+        media = (soma / qtd_clientes)
       }
 
     }
 
     // media = (valor_clientes[0] + valor_clientes[1] + valor_clientes[2]) / 3
 
+    // msg_qtd_part = "A quantidade de participantes foi: "
+
+    document.write("A quantidade de participantes foi: " + qtd_clientes + "<br><br>");
+
     if (media > 100) {
-      alert("Parabéns, a média de vocês é maior que 100 ")
+      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+      document.write("Parabéns, a média de vocês é maior que 100");
     }
     else if (media > 50 && media <= 100) {
-      alert("Muito bem, você está na média, vamos melhorar !!!")
+      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+      document.write("Muito bem, você está na média, vamos melhorar !!!" + media.toFixed(2));
     }
     else if (media >= 20 && media < 50) {
-      alert("Você precisa realmente melhorar")
+      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+      document.write("Você está ficando abaixo, mas podemos melhorar, se esforce um pouco mais " + "<br>");
+      document.write("A nossa recompensa está no esforço, não no resultado. <br> Um esforço total é uma vitória completa ");
     }
     else {
-      alert("Nenhuma das opções")
+      // document.write("A Quantidade de pessoas que passaram pela pesquisa é = " + qtd_clientes + "<br><br>");
+
+      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+
+      document.write("Pessoal é  realmente isso que vocês querem? <br> Pessoal é realmente isso que desejam ? " + "<br><br>");
+
+      document.write("Vocês precisam realmente estudar um pouco mais, estamos aqui para ajudar e fazer com que" +
+        "você possa realizar aquilo que você quer. Lembre-se, nunca perdemos, ou você ganha" +
+        ", ou você aprende, lembre disso. " + "<br><br>");
+      document.write(" Reflita, <br> Treine enquanto eles dormem, estude enquanto eles se divertem" +
+        ", persista enquanto eles descansam, e então, viva o que eles sonham. ");
     }
 
   </script>
