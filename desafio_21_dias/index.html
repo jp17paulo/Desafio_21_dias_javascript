@@ -22,15 +22,38 @@
     /*Looping para captar os valores e nomes dos clientes*/
     /*****************************************************/
 
-    for (i = 1; i <= qtd_clientes; i++) {
+    // for (i = 1; i <= qtd_clientes; i++) {
+
+    //   notas_alunos = [];
+
+    //   cliente = prompt("Digite o nome do cliente: " + i);
+    //   sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
+    //   s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
+    //   s_mostra = (s_sexo == "M" ? " do " : " da ");
+    //   valor_do_cliente1 = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
+
+    //   debugger
+
+    //   aluno = {};
+    //   aluno.nome = cliente;
+    //   aluno.notas = notas_alunos;
+    //   valor_clientes.push(aluno);
+    //   nomes_clientes.push(cliente);
+
+    // }
+
+
+    for (i = 0; i < qtd_clientes; i++) {
 
       notas_alunos = [];
 
-      cliente = prompt("Digite o nome do cliente: " + i);
-      sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
-      s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
-      s_mostra = (s_sexo == "M" ? " do " : " da ");
-      valor = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
+      cliente = prompt("Digite o nome do cliente: " + (i + 1));
+
+      valor_do_cliente1 = parseFloat(prompt("Digite o primeiro " + (i + 1) + " valor "));
+      valor_do_cliente2 = parseFloat(prompt("Digite o segundo " + (i + 1) + " valor "));
+
+      notas_alunos.push(valor_do_cliente1);
+      notas_alunos.push(valor_do_cliente2);
 
       debugger
 
@@ -94,7 +117,7 @@
         ", persista enquanto eles descansam, e então, viva o que eles sonham. <br><br>");
     }
 
-    document.write("Os participantes da pesquisa foram: <br><br>" + nomes_clientes.join(" , ") + "<br><br>");
+    document.write("Os participantes da pesquisa foram: <br><br>" + nomes_clientes.join("<br><br>") + "<br><br>");
 
   </script>
 </body>
