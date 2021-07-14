@@ -23,14 +23,23 @@
     /*****************************************************/
 
     for (i = 1; i <= qtd_clientes; i++) {
+
+      notas_alunos = [];
+
       cliente = prompt("Digite o nome do cliente: " + i);
       sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
       s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
       s_mostra = (s_sexo == "M" ? " do " : " da ");
       valor = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
 
-      valor_clientes.push(valor);
-      nomes_clientes.push(cliente)
+      debugger
+
+      aluno = {};
+      aluno.nome = cliente;
+      aluno.notas = notas_alunos;
+      valor_clientes.push(aluno);
+      nomes_clientes.push(cliente);
+
     }
 
 
