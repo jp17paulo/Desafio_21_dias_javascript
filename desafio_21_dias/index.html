@@ -12,101 +12,107 @@
 
     /*Declaração de variáveis*/
 
-    valor_clientes = []
-    nomes_clientes = []
-    qtd_clientes = parseInt(prompt("Quantos clientes deseja cadastrar? "))
+    // notas_alunos = []
+    // alunos = []
+    alunos = [];
+    qtd_alunos = parseInt(prompt("Quantos clientes deseja cadastrar? "))
     media = 0;
     soma = 0;
 
+
     /*****************************************************/
-    /*Looping para captar os valores e nomes dos clientes*/
+    /*Looping para captar os  nomes e notas dos alunos*/
     /*****************************************************/
 
-    // for (i = 1; i <= qtd_clientes; i++) {
-
-    //   notas_alunos = [];
-
-    //   cliente = prompt("Digite o nome do cliente: " + i);
-    //   sexo = prompt("Digite o sexo do primeiro cliente: " + i + " \nM para masculino\nF para feminino");
-    //   s_sexo = (sexo.trim().toUpperCase() == "M" ? "M" : "F");
-    //   s_mostra = (s_sexo == "M" ? " do " : " da ");
-    //   valor_do_cliente1 = parseFloat(prompt("Digite o valor " + s_mostra + cliente));
-
-    //   debugger
-
-    //   aluno = {};
-    //   aluno.nome = cliente;
-    //   aluno.notas = notas_alunos;
-    //   valor_clientes.push(aluno);
-    //   nomes_clientes.push(cliente);
-
-    // }
-
-
-    for (i = 0; i < qtd_clientes; i++) {
-
-      notas_alunos = [];
-
-      cliente = prompt("Digite o nome do cliente: " + (i + 1));
-
-      valor_do_cliente1 = parseFloat(prompt("Digite o primeiro " + (i + 1) + " valor "));
-      valor_do_cliente2 = parseFloat(prompt("Digite o segundo " + (i + 1) + " valor "));
-
-      notas_alunos.push(valor_do_cliente1);
-      notas_alunos.push(valor_do_cliente2);
-
-      debugger
-
+    for (i = 0; i < qtd_alunos; i++) {
+      // notas_alunos = [];
+      alunos.notas = [];
       aluno = {};
-      aluno.nome = cliente;
-      aluno.notas = notas_alunos;
-      valor_clientes.push(aluno);
-      nomes_clientes.push(cliente);
+
+      aluno.nome = prompt("Digite o nome do aluno: " + (i + 1));
+
+      somaNotas = 0;
+      for (nota_index = 0; nota_index < 2; nota_index++) {
+        debugger
+        if (nota_index == 0) {
+          nota_aluno = parseFloat(prompt("Digite a primeira nota "));
+          somaNotas += nota_aluno;
+          alunos.notas.push(nota_aluno);
+        }
+        else {
+          nota_aluno = parseFloat(prompt("Digite a segunda nota "));
+          somaNotas += nota_aluno;
+          alunos.notas.push(nota_aluno);
+        }
+
+      }
+
+      aluno.media = somaNotas / alunos.notas.length
+
+      alunos.push(aluno)
 
     }
-
 
     /*****************************************************/
     /*Looping para captar a média dos valores informados*/
     /*****************************************************/
 
-    debugger
-    for (j = 1; j <= valor_clientes.length; j++) {
-      soma += valor_clientes[j]
-      if (j == valor_clientes.length - 1) {
-        media = (soma / qtd_clientes)
-      }
+    // for (j = 1; j <= notas_alunos.length; j++) {
+    //   soma += notas_alunos[j]
+    //   if (j == notas_alunos.length - 1) {
+    //     media = (soma / qtd_alunos)
+    //   }
 
-    }
+    // }
 
-    // media = (valor_clientes[0] + valor_clientes[1] + valor_clientes[2]) / 3
-
-    // msg_qtd_part = "A quantidade de participantes foi: "
-
-
+    document.write("_______________________________________________________________________________")
     /*****************************************************/
     /*Apresentação na tela dos resultados*/
     /*****************************************************/
 
-    document.write("A quantidade de participantes foi: " + qtd_clientes + "<br><br>");
+    document.write("A quantidade de participantes foi: " + qtd_alunos + "<br><br>");
 
-    if (media > 100) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+    debugger
+    somaGeralMedia = 0
+    for (aluno_index = 0; aluno_index < alunos.length; aluno_index++) {
+      aluno = alunos[aluno_index];
+
+      document.write("O aluno " + aluno.nome + " recebeu as notas : " + "<br><br>");
+
+      somaDasNotas = 0;
+
+      for (nota_index = 0; nota_index < alunos.notas.length; nota_index++) {
+        nota_aluno = alunos.notas[nota_index];
+        somaDasNotas += nota_aluno;
+        document.write("Nota " + (nota_index + 1) + " = " + alunos.notas[nota_index] + "<br><br>");
+      }
+
+      somaGeralMedia += aluno.media;
+
+      document.write("A média do(a) " + aluno.nome + " é: " + aluno.media + "<br><br>");
+
+    }
+
+    mediaGeral = somaGeralMedia / alunos.length;
+
+    document.write("A média da pesquisa é de : " + mediaGeral + "<br><br>");
+
+    if (mediaGeral >= 100) {
+      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
       document.write("Parabéns, a média de vocês é maior que 100 <br><br>");
     }
-    else if (media > 50 && media <= 100) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
-      document.write("Muito bem, você está na média, vamos melhorar !!!" + media.toFixed(2) + "<br><br>");
+    else if (mediaGeral > 50 && mediaGeral <= 100) {
+      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
+      document.write("Muito bem, você está na média, vamos melhorar !!! " + "<br><br>");
     }
-    else if (media >= 20 && media < 50) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+    else if (mediaGeral >= 20 && mediaGeral < 50) {
+      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
       document.write("Você está ficando abaixo, mas podemos melhorar, se esforce um pouco mais " + "<br>");
       document.write("A nossa recompensa está no esforço, não no resultado. <br> Um esforço total é uma vitória completa <br><br>");
     }
     else {
-      // document.write("A Quantidade de pessoas que passaram pela pesquisa é = " + qtd_clientes + "<br><br>");
 
-      document.write("A média das pessoas digitadas na pesquisa é = " + media.toFixed(2) + "<br><br>");
+      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
 
       document.write("Pessoal é  realmente isso que vocês querem? <br> Pessoal é realmente isso que desejam ? " + "<br><br>");
 
@@ -117,7 +123,8 @@
         ", persista enquanto eles descansam, e então, viva o que eles sonham. <br><br>");
     }
 
-    document.write("Os participantes da pesquisa foram: <br><br>" + nomes_clientes.join("<br><br>") + "<br><br>");
+    debugger
+    document.write("Os participantes da pesquisa foram: <br><br>" + alunos.map(x => x.nome).join("<br><br>"));
 
   </script>
 </body>
