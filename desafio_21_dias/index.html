@@ -9,121 +9,18 @@
 <body>
   <script>
 
+    function leia() {
+      prompt("Digite o primeiro número: ")
+    };
 
-    /*Declaração de variáveis*/
+    y = function leia() {
+      prompt("Digite o segundo número: ")
+    };
 
-    // notas_alunos = []
-    // alunos = []
-    alunos = [];
-    qtd_alunos = parseInt(prompt("Quantos clientes deseja cadastrar? "))
-    media = 0;
-    soma = 0;
-
-
-    /*****************************************************/
-    /*Looping para captar os  nomes e notas dos alunos*/
-    /*****************************************************/
-
-    for (i = 0; i < qtd_alunos; i++) {
-      // notas_alunos = [];
-      alunos.notas = [];
-      aluno = {};
-
-      aluno.nome = prompt("Digite o nome do aluno: " + (i + 1));
-
-      somaNotas = 0;
-      for (nota_index = 0; nota_index < 2; nota_index++) {
-        debugger
-        if (nota_index == 0) {
-          nota_aluno = parseFloat(prompt("Digite a primeira nota "));
-          somaNotas += nota_aluno;
-          alunos.notas.push(nota_aluno);
-        }
-        else {
-          nota_aluno = parseFloat(prompt("Digite a segunda nota "));
-          somaNotas += nota_aluno;
-          alunos.notas.push(nota_aluno);
-        }
-
-      }
-
-      aluno.media = somaNotas / alunos.notas.length
-
-      alunos.push(aluno)
-
+    function calculaExpressao(x, y) {
+      return
     }
 
-    /*****************************************************/
-    /*Looping para captar a média dos valores informados*/
-    /*****************************************************/
-
-    // for (j = 1; j <= notas_alunos.length; j++) {
-    //   soma += notas_alunos[j]
-    //   if (j == notas_alunos.length - 1) {
-    //     media = (soma / qtd_alunos)
-    //   }
-
-    // }
-
-    document.write("_______________________________________________________________________________")
-    /*****************************************************/
-    /*Apresentação na tela dos resultados*/
-    /*****************************************************/
-
-    document.write("A quantidade de participantes foi: " + qtd_alunos + "<br><br>");
-
-    debugger
-    somaGeralMedia = 0
-    for (aluno_index = 0; aluno_index < alunos.length; aluno_index++) {
-      aluno = alunos[aluno_index];
-
-      document.write("O aluno " + aluno.nome + " recebeu as notas : " + "<br><br>");
-
-      somaDasNotas = 0;
-
-      for (nota_index = 0; nota_index < alunos.notas.length; nota_index++) {
-        nota_aluno = alunos.notas[nota_index];
-        somaDasNotas += nota_aluno;
-        document.write("Nota " + (nota_index + 1) + " = " + alunos.notas[nota_index] + "<br><br>");
-      }
-
-      somaGeralMedia += aluno.media;
-
-      document.write("A média do(a) " + aluno.nome + " é: " + aluno.media + "<br><br>");
-
-    }
-
-    mediaGeral = somaGeralMedia / alunos.length;
-
-    document.write("A média da pesquisa é de : " + mediaGeral + "<br><br>");
-
-    if (mediaGeral >= 100) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
-      document.write("Parabéns, a média de vocês é maior que 100 <br><br>");
-    }
-    else if (mediaGeral > 50 && mediaGeral <= 100) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
-      document.write("Muito bem, você está na média, vamos melhorar !!! " + "<br><br>");
-    }
-    else if (mediaGeral >= 20 && mediaGeral < 50) {
-      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
-      document.write("Você está ficando abaixo, mas podemos melhorar, se esforce um pouco mais " + "<br>");
-      document.write("A nossa recompensa está no esforço, não no resultado. <br> Um esforço total é uma vitória completa <br><br>");
-    }
-    else {
-
-      document.write("A média das pessoas digitadas na pesquisa é = " + mediaGeral.toFixed(2) + "<br><br>");
-
-      document.write("Pessoal é  realmente isso que vocês querem? <br> Pessoal é realmente isso que desejam ? " + "<br><br>");
-
-      document.write("Vocês precisam realmente estudar um pouco mais, estamos aqui para ajudar e fazer com que" +
-        "você possa realizar aquilo que você quer. Lembre-se, nunca perdemos, ou você ganha" +
-        ", ou você aprende, lembre disso. " + "<br><br>");
-      document.write(" Reflita, <br> Treine enquanto eles dormem, estude enquanto eles se divertem" +
-        ", persista enquanto eles descansam, e então, viva o que eles sonham. <br><br>");
-    }
-
-    debugger
     document.write("Os participantes da pesquisa foram: <br><br>" + alunos.map(x => x.nome).join("<br><br>"));
 
   </script>
