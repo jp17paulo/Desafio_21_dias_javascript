@@ -9,17 +9,66 @@
 <body>
   <script>
 
-    num = parseInt(prompt("Digite quantos bolos irá querer: "));
-
-    boloDeCenoura = function (escape) {
-      document.write("Bolo feito: " + escape);
-      if (escape >= 100) {
+    /*****************************************************/
+    /******Usando função recursiva***********************/
+    tabuada = function (num_ini_tabu, num_fim_tabu, mult) {
+      if (num_ini_tabu > num_fim_tabu) {
         return
       }
-      boloDeCenoura(escape + 1);
+
+      document.write(mult + " X " + num_ini_tabu + " = " + (mult * num_ini_tabu) + "</br>");
+
+      tabuada(num_ini_tabu + 1, num_fim_tabu, mult)
+
     }
 
-    boloDeCenoura(num);
+    /*******************************************************/
+    /******Usando função convencional***********************/
+    function valorMedia() {
+      quantidade = parseInt(prompt("Digite a quantidade de alunos"))
+
+      notas = []
+      for (a = 0; a < quantidade; a++) {
+        nota = parseInt(prompt("Digite a nota do aluno " + (a + 1)))
+        notas.push(nota)
+      }
+      debugger
+      somaNotas = notas.reduce((x, y) => x + y);
+      document.write("A média dos alunos é de: " + (somaNotas / notas.length))
+    }
+
+    /*****************************************************/
+    /******Menu utilizando função recursiva***************/
+    menu = function () {
+      opcao = parseInt(prompt("Digite uma das opções:\n"
+        + "1 - Tabuada\n"
+        + "2 - Media\n"
+        + "3 - Sair"))
+
+      document.body.innerHTML = "";
+
+      if (opcao == 3) {
+        return;
+      }
+
+      else if (opcao == 1) {
+        mult = Number(prompt("Digite o multiplicando"));
+        num_ini_tabu = Number(prompt("Digite o número  inicial"));
+        num_fim_tabu = Number(prompt("Digite o número  final"));
+        tabuada(num_ini_tabu, num_fim_tabu, mult);
+      }
+      else if (opcao == 2) {
+        valorMedia();
+      }
+      else if (opcao != 3) {
+        alert(("Opção inválida, escolha um número válido."))
+      }
+
+      menu();
+
+    }
+
+    menu();
 
   </script>
 </body>
