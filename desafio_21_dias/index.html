@@ -37,22 +37,30 @@
     //   document.write("A média dos alunos é de: " + (somaNotas / notas.length))
     // }
 
-    let valorMedia = () => {
-      let media = (nota1_aluno, nota2_aluno) => {
-        media_alunos = (nota1_aluno + nota2_aluno) / 2;
-        document.write("A sua média é: " + media_alunos + "<br>");
-      }
+    ///*******************************************************/
+    ///******Usando função recursiva***********************/
+
+    /*Constante chamada para calcular a média*/
+    const valorMedia = () => {
       notas = [];
+      /*função que recebe as notas dos alunos*/
       perguntaNotas = function (qtd_vezes, i) {
-        notas.push(Number(prompt("Digite as notas do usuário")));
+        notas.push(Number(prompt("Digite a nota do aluno " + i)));
+        debugger
+        /*Verifica se a quantidade de alunos informadas pelo usuário não foi atingida*/
         if (i >= qtd_vezes) {
+          /*Sai da função*/
           return;
         }
+        /*Executa novamente a função (recursividade)*/
         perguntaNotas(qtd_vezes, i + 1);
-      }
 
-      perguntaNotas(3, 1);
-      soma = notas.reduce((a, b) => a + b, a);
+      }
+      debugger
+      qtd_alunos = Number(prompt("Digite a quantidade de alunos/notas"))
+      perguntaNotas(qtd_alunos, 1);
+      /*Soma as notas que estaão contidas no array notas*/
+      soma = notas.reduce((a, b) => a + b);
       media = soma / notas.length;
       document.write("A média dos alunos é de: " + (media))
 
