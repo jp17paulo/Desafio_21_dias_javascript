@@ -8,96 +8,70 @@
 
 <body>
   <script>
+    /*============================Antigo==========================*/
+    // Pessoa = function (_nome, _telefone, _cpf) {
+    //   this.nome = _nome
+    //   this.telefone = _telefone
+    //   this.cpf = _cpf
 
-    /*****************************************************/
-    /******Usando função recursiva***********************/
-    tabuada = function (num_ini_tabu, num_fim_tabu, mult) {
-      if (num_ini_tabu > num_fim_tabu) {
-        return
-      }
 
-      document.write(mult + " X " + num_ini_tabu + " = " + (mult * num_ini_tabu) + "</br>");
-
-      tabuada(num_ini_tabu + 1, num_fim_tabu, mult)
-
-    }
-
-    // /*******************************************************/
-    // /******Usando função convencional***********************/
-    // function valorMedia() {
-    //   quantidade = parseInt(prompt("Digite a quantidade de alunos"))
-
-    //   notas = []
-    //   for (a = 0; a < quantidade; a++) {
-    //     nota = parseInt(prompt("Digite a nota do aluno " + (a + 1)))
-    //     notas.push(nota)
+    //   this.andar() = function () {
+    //     alert(this.nome)
     //   }
-    //   debugger
-    //   somaNotas = notas.reduce((x, y) => x + y);
-    //   document.write("A média dos alunos é de: " + (somaNotas / notas.length))
+
+    //   //arrow function (o mesmo que uma função)
+    //   this.falar() = () => {
+    //     alert(this.telefone)
+    //   }
+
+    //   interna = function () {
+    //     alert(this.nome + "  " + this.telefone)
+    //   }
+
+    //   publicInterna = function () {
+    //     this.interna()
+    //   }
+
     // }
 
-    ///*******************************************************/
-    ///******Usando função recursiva***********************/
+    // Pessoa.prototype.comer = function () {
+    //   alert("Generico para todos")
+    // }
 
-    /*Constante chamada para calcular a média*/
-    const valorMedia = () => {
-      notas = [];
-      /*função que recebe as notas dos alunos*/
-      perguntaNotas = function (qtd_vezes, i) {
-        notas.push(Number(prompt("Digite a nota do aluno " + i)));
-        debugger
-        /*Verifica se a quantidade de alunos informadas pelo usuário não foi atingida*/
-        if (i >= qtd_vezes) {
-          /*Sai da função*/
-          return;
-        }
-        /*Executa novamente a função (recursividade)*/
-        perguntaNotas(qtd_vezes, i + 1);
+    // Pessoa.comer = function () {
+    //   alert("Generico para todos")
+    // }
 
+    /*=============================Novo============================*/
+    Pessoa = class {
+      constructor(_nome, _telefone, _cpf) {
+        this.nome = _nome
+        this.telefone = _telefone
+        this.cpf = _cpf
       }
-      debugger
-      qtd_alunos = Number(prompt("Digite a quantidade de alunos/notas"))
-      perguntaNotas(qtd_alunos, 1);
-      /*Soma as notas que estaão contidas no array notas*/
-      soma = notas.reduce((a, b) => a + b);
-      media = soma / notas.length;
-      document.write("A média dos alunos é de: " + (media))
+
+      andar() {
+        alert(this.nome)
+      }
+
+      falar() {
+        alert(this.telefone)
+      }
+
+      static comer() {
+        alert("Generico para todos")
+      }
+
+      get interna() {
+        alert(this.nome + "  " + this.telefone)
+      }
+
+      publicInterna() {
+        this.interna()
+      }
 
     }
 
-    /*****************************************************/
-    /******Menu utilizando função recursiva***************/
-    menu = function () {
-      opcao = parseInt(prompt("Digite uma das opções:\n"
-        + "1 - Tabuada\n"
-        + "2 - Media\n"
-        + "3 - Sair"))
-
-      document.body.innerHTML = "";
-
-      if (opcao == 3) {
-        return;
-      }
-
-      else if (opcao == 1) {
-        mult = Number(prompt("Digite o multiplicando"));
-        num_ini_tabu = Number(prompt("Digite o número  inicial"));
-        num_fim_tabu = Number(prompt("Digite o número  final"));
-        tabuada(num_ini_tabu, num_fim_tabu, mult);
-      }
-      else if (opcao == 2) {
-        valorMedia();
-      }
-      else if (opcao != 3) {
-        alert(("Opção inválida, escolha um número válido."))
-      }
-
-      menu();
-
-    }
-
-    menu();
 
   </script>
 </body>
