@@ -8,70 +8,81 @@
 
 <body>
   <script>
-    /*============================Antigo==========================*/
-    // Pessoa = function (_nome, _telefone, _cpf) {
-    //   this.nome = _nome
-    //   this.telefone = _telefone
-    //   this.cpf = _cpf
-
-
-    //   this.andar() = function () {
-    //     alert(this.nome)
+    /*===============================================*/
+    /*========Classe Telegram========================*/
+    /*===============================================*/
+    // Telegram = class {
+    //   constructor() {
+    //     /*Proriedades*/
+    //     this.cadastro = "";
+    //     this.login = "";
+    //     this.contatos = "";
+    //     this.grupos = "";
+    //     this.chamadas = "";
+    //     this.configuracoes = "";
     //   }
-
-    //   //arrow function (o mesmo que uma função)
-    //   this.falar() = () => {
-    //     alert(this.telefone)
+    //   acoes() {
+    //     alert("mensagens");
     //   }
-
-    //   interna = function () {
-    //     alert(this.nome + "  " + this.telefone)
-    //   }
-
-    //   publicInterna = function () {
-    //     this.interna()
-    //   }
-
     // }
 
-    // Pessoa.prototype.comer = function () {
-    //   alert("Generico para todos")
+    // comunidadeTorneseUmProgramador = new Telegram();
+
+    // //comunidadeTorneseUmProgramador.acoes();
+    // comunidadeTorneseUmProgramador.cadastro = "João Paulo";
+    // debugger
+    // alert(comunidadeTorneseUmProgramador.cadastro);
+    // comunidadeTorneseUmProgramador.acoes();
+
+    /*===============================================*/
+    /*========Classe Câmera==========================*/
+    /*===============================================*/
+
+    /*Método novo, classe privada não funcionou*/
+    // class Camera {
+    //   constructor() {
+    //     this.redonda = "";
+    //     this.pixel = "";
+    //   }
+    //   gravar() {
+    //     alert("Estamos ao vivo na live");
+    //   }
+
+    //   foto() {
+    //     alert("Prepare para a Foto!");
+    //   }
+    //   static Fixa() {
+    //     alert("Propriedade Privada Aula");
+    //   }
+
+    //   get aula() {
+    //     alert("Propriedade Privada Aula");
+    //   }
+
+    //   set aula2() {
+    //     alert("Propriedade Privada Aula");
+    //   }
     // }
 
-    // Pessoa.comer = function () {
-    //   alert("Generico para todos")
-    // }
+    /*Método antigo*/
+    Camera = function () {
+      this.redonda = "";
+      this.pixel = "";
 
-    /*=============================Novo============================*/
-    Pessoa = class {
-      constructor(_nome, _telefone, _cpf) {
-        this.nome = _nome
-        this.telefone = _telefone
-        this.cpf = _cpf
+      this.gravar = () => {
+        alert("Estamos ao vivo na live");
       }
 
-      andar() {
-        alert(this.nome)
-      }
+      /*Método Privado*/
+      foto = () => {
+        alert("Prepare para a Foto!");
 
-      falar() {
-        alert(this.telefone)
       }
-
-      static comer() {
-        alert("Generico para todos")
-      }
-
-      get interna() {
-        alert(this.nome + "  " + this.telefone)
-      }
-
-      publicInterna() {
-        this.interna()
-      }
-
     }
 
+    Cannon = new Camera();
+
+    Cannon.gravar();
 
   </script>
 </body>
