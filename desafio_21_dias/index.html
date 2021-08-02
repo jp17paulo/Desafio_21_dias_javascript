@@ -8,82 +8,86 @@
 
 <body>
   <script>
-    /*===============================================*/
-    /*========Classe Telegram========================*/
-    /*===============================================*/
-    // Telegram = class {
-    //   constructor() {
-    //     /*Proriedades*/
-    //     this.cadastro = "";
-    //     this.login = "";
-    //     this.contatos = "";
-    //     this.grupos = "";
-    //     this.chamadas = "";
-    //     this.configuracoes = "";
-    //   }
-    //   acoes() {
-    //     alert("mensagens");
-    //   }
-    // }
-
-    // comunidadeTorneseUmProgramador = new Telegram();
-
-    // //comunidadeTorneseUmProgramador.acoes();
-    // comunidadeTorneseUmProgramador.cadastro = "João Paulo";
-    // debugger
-    // alert(comunidadeTorneseUmProgramador.cadastro);
-    // comunidadeTorneseUmProgramador.acoes();
-
-    /*===============================================*/
-    /*========Classe Câmera==========================*/
-    /*===============================================*/
-
-    /*Método novo, classe privada não funcionou*/
-    // class Camera {
-    //   constructor() {
-    //     this.redonda = "";
-    //     this.pixel = "";
-    //   }
-    //   gravar() {
-    //     alert("Estamos ao vivo na live");
-    //   }
-
-    //   foto() {
-    //     alert("Prepare para a Foto!");
-    //   }
-    //   static Fixa() {
-    //     alert("Propriedade Privada Aula");
-    //   }
-
-    //   get aula() {
-    //     alert("Propriedade Privada Aula");
-    //   }
-
-    //   set aula2() {
-    //     alert("Propriedade Privada Aula");
-    //   }
-    // }
-
-    /*Método antigo*/
-    Camera = function () {
-      this.redonda = "";
-      this.pixel = "";
-
-      this.gravar = () => {
-        alert("Estamos ao vivo na live");
+    /*===================================*/
+    /*======Classe Aluno=======*/
+    /*===================================*/
+    Aluno = class {
+      constructor() {
+        this.nome = ""
+        this.matricula = ""
+        this.notas = []
       }
-
-      /*Método Privado*/
-      foto = () => {
-        alert("Prepare para a Foto!");
-
+      media() {
+        if (this.notas.length == 0)
+          return 0
+        else {
+          let somaNotas = this.notas.reduce((x, y) => x + y)
+          let media = somaNotas / this.notas.length
+          return media
+        }
       }
     }
 
-    Cannon = new Camera();
+    // jp = new Alunos()
+    // jp.nome = "João Paulo Ghissardi da Silva"
+    // jp.matricula = "123456"
+    // jp.notas.push(8, 9)
+    // alert("A média do aluno " + jp.nome + " foi: " + jp.media())
 
-    Cannon.gravar();
+    // nat = new Alunos()
+    // nat.nome = "Natalia"
+    // nat.matricula = "56231263"
+    // nat.notas.push(3)
+    // alert("A média do aluno " + nat.nome + " foi: " + nat.media())
 
+    // elisa = new Alunos()
+    // elisa.nome = "Elisa"
+    // elisa.matricula = "56231263"
+    // elisa.notas.push(8)
+    // alert("A média do aluno " + nat.nome + " foi: " + nat.media())
+
+    // bento = new Alunos()
+    // bento.nome = "Bento"
+    // bento.matricula = "56231263"
+    // bento.notas.push(7)
+    // alert("A média do aluno " + nat.nome + " foi: " + nat.media())
+
+    /*=========================================*/
+    /*======Array para receber os alunos=======*/
+    /*=========================================*/
+    arrayAlunos = []
+
+    const qtdAlunos = Number(prompt("Qual o número de Alunos"))
+    const notaAlunos = Number(prompt("Quantas notas tem cada aluno"))
+
+    /*For para cadastrar o aluno*/
+    for (let i = 0; i < qtdAlunos; i++) {
+      aluno = new Aluno()
+      aluno.nome = prompt("Qual o nome do aluno?")
+      aluno.matricula = prompt(`Qual é seu número de matrícula?`)
+
+      /*For para cadastrar as notas do aluno*/
+      for (let j = 0; j < notaAlunos; j++) {
+        aluno.notas.push(Number(prompt(`Qual a nota ${j + 1} do aluno`)))
+      }
+      /*Incluindo todos os dados do aluno*/
+      arrayAlunos.push(aluno)
+    }
+
+    /*Foreach para mostrar a média do aluno*/
+    for (aluno of arrayAlunos) {
+      alert(`A média do ${aluno.nome} com matrícula ${aluno.matricula} é ${aluno.media()}`)
+    }
+
+    let mediaGeral = 0
+    /*For para percorrer o arrayAlunos*/
+    for (let i = 0; i < arrayAlunos.length; i++) {
+      /*For para percorrer as notas por aluno*/
+      for (let j = 0; j < arrayAlunos[i].notas.length; j++) {
+        mediaGeral += arrayAlunos[i].notas[j]
+      }
+    }
+    alert(`A média geral é ${Math.round(s / qtdAlunos * notaAlunos)}`)
   </script>
 </body>
 
